@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import sys, os
-import requests
 import math
 import bs4
 from bs4 import BeautifulSoup
@@ -11,7 +10,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.options import Options # adjust Chrome window size
+import time, re
 
 OverviewTabKeys = ['Language of instruction', 'Standard length of studies', 'Degree', 'Area of Focus', 'Tuition fees']
 AdmissionTabKeys = ['Admission requirements (Germany)','Admission requirements (Link)','Admission Mode', 'Admission Semester', 'Lecture Period', 'Website']
@@ -27,7 +28,7 @@ def LoadBrowser( string ):
     driver = None
     if string in ChromeList:
         driver = webdriver.Chrome()
-   elif string in FireFoxList:
+    elif string in FireFoxList:
         driver = webdriver.Firefox()
     elif string in IEList:
         driver = webdriver.Ie()
@@ -35,10 +36,14 @@ def LoadBrowser( string ):
         raise ValueError( string )
     return driver
 
-def Crawler(browser, web_addr, sleep=1):
+def Crawler(browser, web_addr, sleep=1, timeout=30):
+    if timeout >0: browser.set_page_load_timeout(timeout)
     # Katolon Behavior
-    browser.get( web_addr ) # open web by selenium webdriver
-    time.sleep(1)
+    try: browser.get( web_addr ) # open web by selenium webdriver
+    except TimeoutException:
+        print('time out after %d when loading page, stop loading and proceed to next operations' % timeout)
+        browser.execute_script('window.stop()')
+    time.sleep(sleep)
     return browser.page_source
 
 # helper function: bs4 parser will mistakenly add semicolon after ampersand(&)'s refentity,
