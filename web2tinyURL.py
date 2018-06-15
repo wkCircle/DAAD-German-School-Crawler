@@ -15,8 +15,8 @@ import german_school_Crawler as gsc # import the German school crawling python f
 if __name__ == '__main__':
     # Hyperparams
     tinyurlweb = r'https://tinyurl.com/'
-    path = r'C:\Users\rreal\Downloads\German_CS_MS.csv'
-    sleepSecs = 1
+    path = r'C:\Users\rreal\Downloads\German_Econ_MS.csv'
+    sleepSecs = 2
     stringlenThreshold = 30 # target web string len being larger than this will be converted to the shorter one
     continueRow = 0 # this para will be auto computed (接續上次程式中斷的地方，接著Target file 繼續分析)
     pageload_timeout = 10
