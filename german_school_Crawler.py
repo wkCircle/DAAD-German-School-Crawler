@@ -162,8 +162,9 @@ def isWeb(href):
 
 if __name__ == '__main__':
     # params setting
-    save_path = r'C:\Users\rreal\Downloads\German_CS_MS.csv'
-    source_web = 'https://www.daad.de/deutschland/studienangebote/studiengang/en/?a=result&q=&degree=37&subjects%5B193%5D=1&studyareas%5B226%5D=1&courselanguage=&locations=&universities%5B1%5D=1&admissionsemester=&sort=town&page=1'
+    save_path = r'C:\Users\rreal\Downloads\German_Econ_MS.csv'
+    # 'page=' (wihout number) should appear in the end of the variable source_web
+    source_web = 'https://www.daad.de/deutschland/studienangebote/studiengang/en/?a=result&q=&degree=37&subjects%5B380%5D=1&studyareas%5B380%5D=1&studyfields%5B394%5D=1&studyfields%5B390%5D=1&courselanguage=2&locations=&universities%5B1%5D=1&admissionsemester=&sort=name&page=1'
     #totalPages = 32 # can be computed automatically
     # if totalPages is specified, then AutoComputePages should be False.
 
@@ -171,7 +172,8 @@ if __name__ == '__main__':
     BSparser = 'lxml'
     AutoComputePages = True # if False, should specify totalPages
     ref_amp = True
-    encoding='utf-8'
+    encoding ='utf-8'
+    timeSleep = 3
     # check old file exists or not
     if os.path.isfile(save_path):
             ans = input( 'File already exists, rewrite it?[y/n]')
@@ -183,7 +185,8 @@ if __name__ == '__main__':
 
     # crawl and parser
     # 1. crawl how many results found.
-    codecs = Crawler( browser , source_web+str(1), sleep=1 ) # return html
+    source_web = re.sub(r'page=\d+', 'page=', source_web) # remove numbers after 'page='
+    codecs = Crawler( browser , source_web+str(1), sleep=timeSleep ) # return html
     source_soup = BeautifulSoup( codecs , BSparser)
     totalPages, totalResults, sentence = Parser(source_soup, 'crawlResultsFound', AutoComputePages, ref_amp)
     print(sentence, 'totally %d pages' % (totalPages))
@@ -192,7 +195,7 @@ if __name__ == '__main__':
     save_count = 0
     for i in range(totalPages):
         # 2a. crawl program list # a page usually contains 10 links
-        codecs = Crawler( browser , source_web.replace(r'page=.+', 'page=')+str(i+1), sleep=3 ) # return html    
+        codecs = Crawler( browser , source_web+str(i+1), sleep=timeSleep ) # return html    
         page_soup = BeautifulSoup( codecs, BSparser )
         print( 'crawling and parsing page %d\'s program list...' % (i+1))
         programListDF = Parser( page_soup, 'crawlSchoolList', AutoComputePages, ref_amp )
