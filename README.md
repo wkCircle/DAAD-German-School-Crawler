@@ -1,15 +1,20 @@
 # German School Crawler
 ## Overview
-The programm is based on python selenium package and the website [German Academic Exchange Service](https://www.daad.de/en/) 
-to crawl the relevant study program information and save as .csv file 
-the main crawl page path is the following: -> Information for foreigners -> Study Programmes -> All study programmes please click [here](https://www.daad.de/deutschland/studienangebote/studiengang/en/).
+The programm is based on the python selenium package and the website [German Academic Exchange Service](https://www.daad.de/en/) 
+to crawl study program information that user requests and save them as a csv file. 
+The [main](https://www.daad.de/deutschland/studienangebote/studiengang/en/) crawl page can be accessed through: entering into [German Academic Exchange Service](https://www.daad.de/en/) -> Information for foreigners -> Study Programmes -> All study programmes.
+
 You can also filter out some results by making some conditions at the left hand side bar of the 'All study programmes' page.
-Then you can copy the address link and assign it to the argument variable 'source_web'
+Then you can copy the address link and assign it to the argument variable 'source_web'.
+
 ## How to use
-1. Please make sure you have installed selenium package on python environment. Command: 
-	$pip install selenium.
-2. Please first download webdriver and move the file to the directory that contains your python.exe This will allow selenium to control your browser.
-For more details, please refer to: https://www.seleniumhq.org/download/ and download the correct driver based on the browser you want to use.
+
+1. Please make sure you have installed selenium package on python environment. Command:
+
+	$ pip install selenium.
+
+2. Please first download webdriver and move it to the directory which also contains your python.exe This will allow selenium to control your browser. For more details, please refer to: https://www.seleniumhq.org/download/ and download the correct driver based on the browser you want to use.
+
 (Note: these webdrivers are developed by thrid parties instead of seleniumhq!)
 3. Modify the program into yours:
 3.a modify the 'save_path' to determine the output file path
