@@ -42,8 +42,9 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     timeSleep = 3
     ```
     ```
-    # browser: decide wich broswer to use. options can be 'Chrome', 'FireFox', or 'IE'. Notice that your webdriver 
-    # should correspond to the browser you wish to use. Please see point 2, Installation for more details. E.g.,
+    # browser: decide wich broswer to use. options can be 'Chrome', 'FireFox', or 'IE'. Notice that your 
+    # webdriver should correspond to the browser you wish to use. 
+    # Please see point 2, Installation for more details. E.g.,
     browser = LoadBrowser( 'Chrome' )
     ```
 
