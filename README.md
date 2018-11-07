@@ -1,11 +1,11 @@
 # German School Crawler
-Description: The programm is based python selenium package and the website German Academic Exchange Service (https://www.daad.de/en/) 
--> Information for foreigners 
--> Study Programmes 
--> All study programmes [here](https://www.daad.de/deutschland/studienangebote/studiengang/en/) to crawl school program list and its details
+## Overview
+The programm is based on python selenium package and the website [German Academic Exchange Service](https://www.daad.de/en/) 
+to crawl the relevant study program information and save as .csv file 
+the main crawl page path is the following: -> Information for foreigners -> Study Programmes -> All study programmes please click [here](https://www.daad.de/deutschland/studienangebote/studiengang/en/).
 You can also filter out some results by making some conditions at the left hand side bar of the 'All study programmes' page.
 Then you can copy the address link and assign it to the argument variable 'source_web'
-
+## How to use
 1. Please make sure you have installed selenium package on python environment. Command: 
 	$pip install selenium.
 2. Please first download webdriver and move the file to the directory that contains your python.exe This will allow selenium to control your browser.
