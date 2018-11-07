@@ -20,7 +20,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 
 3. Modify the setting in the source code file *german_school_Crawler.py*:
     ```
-    # save_path: the path and file_name you wish to save. E.g.,
+    # save_path: the file_name you wish to save under a specified path. E.g.,
     save_path = r'C:\Users\userA\Downloads\German_Econ_MS.csv'
     
     # source_web: the page website waited to be crawled.
@@ -30,7 +30,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     
     # (optional) the variable totalPages can be auto computed, and the crawler will crawl pages until the end of totalPages.
     # If you wish to crawl a specific number of pages, pls uncomment the var and set a number to it, and 
-    # set the var AutoComputePages in the following as False.
+    # set the var AutoComputePages in the following as False. E.g.,
     totalPages = 32
     ```
     ```
@@ -42,15 +42,14 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     timeSleep = 3
     ```
     ```
-    # decide wich broswer to use
+    # browser: decide wich broswer to use. options can be 'Chrome', 'FireFox', or 'IE'. Notice that your webdriver should correspond
+    # to the browser you wish to use. Please see point 2, Installation for more details. E.g.,
     browser = LoadBrowser( 'Chrome' )
     ```
 
-3.a modify the 'save_path' to determine the output file path
-3.b modify the 'source_web': it's the initial page (usually page 1) to crawl school program list. The program will automatically compute how many pages and results sould be crawled. To turn it off, please make 'AutoComputePages=False' at line 167 and specify 'totalPages' at line 162
+4. Then you can run the program to automatically crawl all school programs and their details. The program will automatically save the result at **save_path**.
 
-4. Then you can run the program to automatically crawl all school program web links of each page and also the contents of those links.
-5. The final output will contains 18 columns as showed in the following and be saved in the file specified by the argument 'save_path':
+5. Sample result is displayed in the below:
 		Link,				Name,				School,			Location,	Language of instruction,	Standard length of studies,		Degree,			Area of Focus,Tuition fees,		Admission requirements (Germany),	Admission requirements (Link),	Admission Mode,			Admission Semester,		Lecture Period,		Website,		International Office (AAA),		AAA Mail,			AAA Link
 https://www.daad.de/deutschland/stud...,Computational Engineering Science,RWTH Aachen University,	Aachen,			German,				3 semesters,		Master (Master of Science),		,		,		A first degree is a requirement...,		https://...		open admission,		Summer and Winter Semester,	09.10.2017 - 02.02.2018,	http:...,	International... Tel.: 0241 80-90660,	international@rwth-aachen.de,	http://www.campus...
 ...
