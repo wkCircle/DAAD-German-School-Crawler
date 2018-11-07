@@ -7,16 +7,20 @@ The [main](https://www.daad.de/deutschland/studienangebote/studiengang/en/) craw
 You can also filter out some results by making some conditions at the left hand side bar of the 'All study programmes' page.
 Then you can copy the address link and assign it to the argument variable 'source_web'.
 
-## How to use
+## Installation
 
-1. Please make sure you have installed selenium package on python environment. Command:
-
+1. Please make sure you have installed all the required packages, especially the selenium and beautifulsoup on python environment. Command:
+	```
 	$ pip install selenium.
+	$ pip install BeautifulSoup4
+	$ pip install lxml
+	$ pip install html5lib
+	```
+2. Please first download webdriver and move it to the directory which also contains your python.exe This will allow selenium to control your browser. For more details, please refer to: https://www.seleniumhq.org/download/ and download the correct driver based on the browser you want to use. (Note: these webdrivers are developed by thrid parties instead of seleniumhq!)
 
-2. Please first download webdriver and move it to the directory which also contains your python.exe This will allow selenium to control your browser. For more details, please refer to: https://www.seleniumhq.org/download/ and download the correct driver based on the browser you want to use.
+3. Modify the setting in the source code file german_school_Crawler.py:
+	
 
-(Note: these webdrivers are developed by thrid parties instead of seleniumhq!)
-3. Modify the program into yours:
 3.a modify the 'save_path' to determine the output file path
 3.b modify the 'source_web': it's the initial page (usually page 1) to crawl school program list. The program will automatically compute how many pages and results sould be crawled. To turn it off, please make 'AutoComputePages=False' at line 167 and specify 'totalPages' at line 162
 
