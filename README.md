@@ -42,14 +42,15 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     timeSleep = 3
     ```
     ```
-    # browser: decide wich broswer to use. options can be 'Chrome', 'FireFox', or 'IE'. Notice that your webdriver should correspond
-    # to the browser you wish to use. Please see point 2, Installation for more details. E.g.,
+    # browser: decide wich broswer to use. options can be 'Chrome', 'FireFox', or 'IE'. Notice that your webdriver 
+    # should correspond to the browser you wish to use. Please see point 2, Installation for more details. E.g.,
     browser = LoadBrowser( 'Chrome' )
     ```
 
 4. Then you can run the program to automatically crawl all school programs and their details. The program will automatically save the result at **save_path**.
 
 5. Sample result is displayed in the below:
-		Link,				Name,				School,			Location,	Language of instruction,	Standard length of studies,		Degree,			Area of Focus,Tuition fees,		Admission requirements (Germany),	Admission requirements (Link),	Admission Mode,			Admission Semester,		Lecture Period,		Website,		International Office (AAA),		AAA Mail,			AAA Link
-https://www.daad.de/deutschland/stud...,Computational Engineering Science,RWTH Aachen University,	Aachen,			German,				3 semesters,		Master (Master of Science),		,		,		A first degree is a requirement...,		https://...		open admission,		Summer and Winter Semester,	09.10.2017 - 02.02.2018,	http:...,	International... Tel.: 0241 80-90660,	international@rwth-aachen.de,	http://www.campus...
-...
+Link|Name|School|Location|Language of instruction|Standard length of studies|Degree|Area of Focus|Tuition fees|Admission requirements (Germany)|Admission requirements (Link)|Admission Mode|Admission Semester|Lecture Period|Website|International Office (AAA)|AAA Mail|AAA Link
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
+http<span>s://</span>w<span>ww.daad.de</span>/deutschland/stud...,Computational | Engineering Science | RWTH Aachen University | Aachen |German|3 semesters| Master (Master of Science)| | | A first degree is a requirement...| https://... | open admission |	Summer and Winter Semester| 09.10.2017 - 02.02.2018 | http:...|	International... Tel.: 0241 80-90660 |	international@rwth-aachen.de |ht<span>tp://ww</span>w.campus...
+
