@@ -65,18 +65,18 @@ This program does nothin but change all web links into smaller version by submit
 I make this function because some of my users said a smaller web string makes the cell in Excel more compact and make it more beautiful as a whole. If you wish to use this function please take a look at the following steps.
 
 * Modify the setting in the source code file *web2tinyURL.py*: Notice that you should input an source file. The program will keep writing data into output file while running. The output file name is <source file name> + '_tinyurl.csv'. And it is outputed under the same directory as the source data.
-	```
-	# (Do not modify) the tinyurl for submitting our web string.
-	tinyurlweb = r'https://tinyurl.com/'
-    	```
-	```
-	# (Modify it) the source file to make change. 
-	# Usually it is the file you just craweld by using german_school_Crawler.py
-	path = r'C:\Users\userA\Downloads\German_Econ_MS.csv'
-    	```
-	```
-	# (Optional/Modify it) system settings
-	sleepSecs = 2 # determines the waitting for next submission to the website.
-    	stringlenThreshold = 30 # IMPORTANT: web string length being larger than this will be converted to the shorter one
-    	continueRow = 0 # this para will be auto computed by looking at the output file. 
-	```
+   ```
+   # (Do not modify) the tinyurl for submitting our web string.
+   tinyurlweb = r'https://tinyurl.com/'
+   ```
+   ```
+   # (Modify it) the source file to make change. 
+   # Usually it is the file you just craweld by using german_school_Crawler.py
+   path = r'C:\Users\userA\Downloads\German_Econ_MS.csv'
+   ```
+   ```
+   # (Optional/Modify it) system settings
+   sleepSecs = 2 # determines the waitting for next submission to the website.
+   stringlenThreshold = 30 # IMPORTANT: web string length being larger than this will be converted to the shorter one
+   continueRow = 0 # this para will be auto computed by looking at the output file. 
+   ```
