@@ -18,8 +18,30 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 	```
 2. Please first download webdriver and move it to the directory which also contains your python.exe This will allow selenium to control your browser. For more details, please refer to: https://www.seleniumhq.org/download/ and download the correct driver based on the browser you want to use. (Note: these webdrivers are developed by thrid parties instead of seleniumhq!)
 
-3. Modify the setting in the source code file german_school_Crawler.py:
-	
+3. Modify the setting in the source code file *german_school_Crawler.py*:
+    ```
+    # params setting
+    save_path = r'C:\Users\rreal\Downloads\German_Econ_MS.csv'
+    # 'page=' (wihout number) should appear in the end of the variable source_web
+    source_web = 'https://www.daad.de/deutschland/studienangebote/studiengang/en/?a=result&q=&degree=37&subjects%5B380%5D=1&studyareas%5B380%5D=1&studyfields%5B394%5D=1&studyfields%5B390%5D=1&courselanguage=2&locations=&universities%5B1%5D=1&admissionsemester=&sort=name&page=1'
+    #totalPages = 32 # can be computed automatically
+    # if totalPages is specified, then AutoComputePages should be False.
+
+    # environ setting
+    BSparser = 'lxml'
+    AutoComputePages = True # if False, should specify totalPages
+    ref_amp = True
+    encoding ='utf-8'
+    timeSleep = 3
+    # check old file exists or not
+    if os.path.isfile(save_path):
+            ans = input( 'File already exists, rewrite it?[y/n]')
+            if ans == 'y':
+                os.remove(save_path)
+                
+    # decide wich broswer to use
+    browser = LoadBrowser( 'Chrome' )
+    ```
 
 3.a modify the 'save_path' to determine the output file path
 3.b modify the 'source_web': it's the initial page (usually page 1) to crawl school program list. The program will automatically compute how many pages and results sould be crawled. To turn it off, please make 'AutoComputePages=False' at line 167 and specify 'totalPages' at line 162
