@@ -1,4 +1,4 @@
-German School Crawler:
+#German School Crawler
 Description: The programm is based python selenium package and the website German Academic Exchange Service (https://www.daad.de/en/) 
 -> Information for foreigners 
 -> Study Programmes 
