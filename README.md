@@ -20,25 +20,28 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 
 3. Modify the setting in the source code file *german_school_Crawler.py*:
     ```
-    # params setting
-    save_path = r'C:\Users\rreal\Downloads\German_Econ_MS.csv'
-    # 'page=' (wihout number) should appear in the end of the variable source_web
+    # save_path: the path and file_name you wish to save. E.g.,
+    save_path = r'C:\Users\userA\Downloads\German_Econ_MS.csv'
+    
+    # source_web: the page website waited to be crawled.
+    # You SHALL have put all conditions and have filtered out the results by using the side bar of DAAD. 
+    # And then copy & paste the web address. E.g., 
     source_web = 'https://www.daad.de/deutschland/studienangebote/studiengang/en/?a=result&q=&degree=37&subjects%5B380%5D=1&studyareas%5B380%5D=1&studyfields%5B394%5D=1&studyfields%5B390%5D=1&courselanguage=2&locations=&universities%5B1%5D=1&admissionsemester=&sort=name&page=1'
-    #totalPages = 32 # can be computed automatically
-    # if totalPages is specified, then AutoComputePages should be False.
-
-    # environ setting
+    
+    # (optional) the variable totalPages can be auto computed, and the crawler will crawl pages until the end of totalPages.
+    # If you wish to crawl a specific number of pages, pls uncomment the var and set a number to it, and 
+    # set the var AutoComputePages in the following as False.
+    totalPages = 32
+    ```
+    ```
+    # (Do not modify unless you know it) environ setting
     BSparser = 'lxml'
     AutoComputePages = True # if False, should specify totalPages
     ref_amp = True
     encoding ='utf-8'
     timeSleep = 3
-    # check old file exists or not
-    if os.path.isfile(save_path):
-            ans = input( 'File already exists, rewrite it?[y/n]')
-            if ans == 'y':
-                os.remove(save_path)
-                
+    ```
+    ```
     # decide wich broswer to use
     browser = LoadBrowser( 'Chrome' )
     ```
