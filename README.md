@@ -1,8 +1,8 @@
-#German School Crawler
+# German School Crawler
 Description: The programm is based python selenium package and the website German Academic Exchange Service (https://www.daad.de/en/) 
 -> Information for foreigners 
 -> Study Programmes 
--> All study programmes (https://www.daad.de/deutschland/studienangebote/studiengang/en/) to crawl school program list and its details
+-> All study programmes [here](https://www.daad.de/deutschland/studienangebote/studiengang/en/) to crawl school program list and its details
 You can also filter out some results by making some conditions at the left hand side bar of the 'All study programmes' page.
 Then you can copy the address link and assign it to the argument variable 'source_web'
 
