@@ -18,7 +18,8 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 	```
 2. Please first download webdriver and move it to the directory which also contains your python.exe This will allow selenium to control your browser. For more details, please refer to: https://www.seleniumhq.org/download/ and download the correct driver based on the browser you want to use. (Note: these webdrivers are developed by thrid parties instead of seleniumhq!)
 
-3. Modify the setting in the source code file *german_school_Crawler.py*:
+## How to Use
+* Modify the setting in the source code file *german_school_Crawler.py*:
     ```
     # save_path: the file_name you wish to save under a specified path. E.g.,
     save_path = r'C:\Users\userA\Downloads\German_Econ_MS.csv'
@@ -48,9 +49,9 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     browser = LoadBrowser( 'Chrome' )
     ```
 
-4. Then you can run the program to automatically crawl all school programs and their details. The program will automatically save the result at **save_path**.
+* Then you can run the program to automatically crawl all school programs and their details. The program will automatically save the result at **save_path**.
 
-5. Sample result is displayed in the below:
+* Sample result is displayed in the below:
 
 |Link|Name|School|Location|Language of instruction|Standard length of studies|Degree|Area of Focus|Tuition fees|Admission requirements (Germany)|Admission requirements (Link)|Admission Mode|Admission Semester|Lecture Period|Website|International Office (AAA)|AAA Mail|AAA Link|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
