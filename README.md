@@ -2,7 +2,7 @@
 ## Overview
 The programm is based on the python selenium package and the website [German Academic Exchange Service](https://www.daad.de/en/) 
 to crawl study program information that user requests and save them as a csv file. 
-The [main crawl page](https://www.daad.de/deutschland/studienangebote/studiengang/en/) can be accessed through: entering into [German Academic Exchange Service](https://www.daad.de/en/) -> Information for foreigners -> Study Programmes -> All study programmes.
+The [main crawl page](https://www.daad.de/deutschland/studienangebote/studiengang/en/) can be accessed through: entering into [German Academic Exchange Service](https://www.daad.de/en/) &rarr Information for foreigners &rarr Study Programmes &rarr All study programmes.
 
 You can also filter out some results by making some conditions at the left hand side bar of the 'All study programmes' page.
 Then you can copy the address link and assign it to the argument variable 'source_web'.
