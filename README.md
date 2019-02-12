@@ -10,7 +10,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 ## Installation
 
 1. Please make sure you have installed all the required packages, especially the selenium and beautifulsoup on python environment. Command:
-	```zsh
+	```console
 	$ pip install selenium.
 	$ pip install BeautifulSoup4
 	$ pip install lxml
@@ -25,12 +25,12 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 * Modify the setting in the source code file *german_school_Crawler.py*:
     ```python
     # save_path: the file_name you wish to save under a specified path. E.g.,
-    save_path = r'C:\Users\userA\Downloads\German_Econ_MS.csv'
+    save_path = r"C:\Users\userA\Downloads\German_Econ_MS.csv"
     
     # source_web: the page website waited to be crawled.
     # You SHALL have put all conditions and have filtered out the results by using the side bar of DAAD. 
     # And then copy & paste the web address. E.g., 
-    source_web = 'https://www.daad.de/deutschland/studienangebote/studiengang/en/?a=result&q=&degree=37&subjects%5B380%5D=1&studyareas%5B380%5D=1&studyfields%5B394%5D=1&studyfields%5B390%5D=1&courselanguage=2&locations=&universities%5B1%5D=1&admissionsemester=&sort=name&page=1'
+    source_web = "https://www.daad.de/deutschland/studienangebote/studiengang/en/?a=result&q=&degree=37&subjects%5B380%5D=1&studyareas%5B380%5D=1&studyfields%5B394%5D=1&studyfields%5B390%5D=1&courselanguage=2&locations=&universities%5B1%5D=1&admissionsemester=&sort=name&page=1"
     
     # (optional) the variable totalPages can be auto computed, and the crawler will crawl pages until the end of totalPages.
     # If you wish to crawl a specific number of pages, pls uncomment the var and set a number to it, and 
@@ -39,10 +39,10 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     ```
     ```python
     # (Do not modify unless you know it) environ setting
-    BSparser = "lxml"
+    BSparser = 'lxml'
     AutoComputePages = True # if False, should specify totalPages
     ref_amp = True
-    encoding ="utf-8"
+    encoding = 'utf-8'
     timeSleep = 3
     ```
     ```python
