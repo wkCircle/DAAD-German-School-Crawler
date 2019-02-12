@@ -10,7 +10,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 ## Installation
 
 1. Please make sure you have installed all the required packages, especially the selenium and beautifulsoup on python environment. Command:
-	```shell
+	```zsh
 	$ pip install selenium.
 	$ pip install BeautifulSoup4
 	$ pip install lxml
@@ -39,10 +39,10 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     ```
     ```python
     # (Do not modify unless you know it) environ setting
-    BSparser = 'lxml'
+    BSparser = "lxml"
     AutoComputePages = True # if False, should specify totalPages
     ref_amp = True
-    encoding ='utf-8'
+    encoding ="utf-8"
     timeSleep = 3
     ```
     ```python
