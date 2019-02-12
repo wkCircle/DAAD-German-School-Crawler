@@ -2,7 +2,7 @@
 ## Overview
 The programm is based on the python selenium package and the website [German Academic Exchange Service](https://www.daad.de/en/) 
 to crawl study program information that user requests and save them as a csv file. 
-The [main](https://www.daad.de/deutschland/studienangebote/studiengang/en/) crawl page can be accessed through: entering into [German Academic Exchange Service](https://www.daad.de/en/) -> Information for foreigners -> Study Programmes -> All study programmes.
+The [main crawl page](https://www.daad.de/deutschland/studienangebote/studiengang/en/) can be accessed through: entering into [German Academic Exchange Service](https://www.daad.de/en/) -> Information for foreigners -> Study Programmes -> All study programmes.
 
 You can also filter out some results by making some conditions at the left hand side bar of the 'All study programmes' page.
 Then you can copy the address link and assign it to the argument variable 'source_web'.
@@ -10,7 +10,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 ## Installation
 
 1. Please make sure you have installed all the required packages, especially the selenium and beautifulsoup on python environment. Command:
-	```sh
+	```shell
 	$ pip install selenium.
 	$ pip install BeautifulSoup4
 	$ pip install lxml
@@ -20,7 +20,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 
 ## How to Use
 
-### german_school_Cralwer.py
+### german\_school\_Cralwer.py
 
 * Modify the setting in the source code file *german_school_Crawler.py*:
     ```python
