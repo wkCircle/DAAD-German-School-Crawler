@@ -10,7 +10,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 ## Installation
 
 1. Please make sure you have installed all the required packages, especially the selenium and beautifulsoup on python environment. Command:
-	```
+	```sh
 	$ pip install selenium.
 	$ pip install BeautifulSoup4
 	$ pip install lxml
@@ -23,7 +23,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 ### german_school_Cralwer.py
 
 * Modify the setting in the source code file *german_school_Crawler.py*:
-    ```
+    ```python
     # save_path: the file_name you wish to save under a specified path. E.g.,
     save_path = r'C:\Users\userA\Downloads\German_Econ_MS.csv'
     
@@ -37,7 +37,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     # set the var AutoComputePages in the following as False. E.g.,
     totalPages = 32
     ```
-    ```
+    ```python
     # (Do not modify unless you know it) environ setting
     BSparser = 'lxml'
     AutoComputePages = True # if False, should specify totalPages
@@ -45,7 +45,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
     encoding ='utf-8'
     timeSleep = 3
     ```
-    ```
+    ```python
     # browser: decide wich broswer to use. options can be 'Chrome', 'FireFox', or 'IE'. Notice that your 
     # webdriver should correspond to the browser you wish to use. 
     # Please see point 2, Installation for more details. E.g.,
@@ -64,17 +64,17 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 This file does nothin but change all web links into shorter version by submitting our links to [tinyurl](https://tinyurl.com/).
 I make this function because some of my users said a shorter web string makes the cell in Excel more compact and make it more beautiful as a whole. If you wish to use this function please take a look at the following steps.
 
-* Modify the setting in the source code file *web2tinyURL.py*: Notice that you should input an source file. The program will keep writing data into output file while running. The output file name is <source file name> + '_tinyurl.csv'. And it is outputed under the same directory as the source data.
-   ```
+* Modify the setting in the source code file *web2tinyURL.py*: Notice that you should input an source file. The program will keep writing data into output file while running. The output file name is <source file name> + '\_tinyurl.csv'. And it is outputed under the same directory as the source data.
+   ```python
    # (Do not modify) the tinyurl for submitting our web string.
    tinyurlweb = r'https://tinyurl.com/'
    ```
-   ```
+   ```python
    # (Modify it) the source file to make change. 
    # Usually it is the file you just craweld by using german_school_Crawler.py
    path = r'C:\Users\userA\Downloads\German_Econ_MS.csv'
    ```
-   ```
+   ```python
    # (Optional/Modify it) system settings
    sleepSecs = 2 # determines the waitting for next submission to the website.
    stringlenThreshold = 30 # IMPORTANT: web string length being larger than this will be converted to the shorter one
