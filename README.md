@@ -64,7 +64,7 @@ Then you can copy the address link and assign it to the argument variable 'sourc
 This file does nothin but change all web links into shorter version by submitting our links to [tinyurl](https://tinyurl.com/).
 I make this function because some of my users said a shorter web string makes the cell in Excel more compact and make it more beautiful as a whole. If you wish to use this function please take a look at the following steps.
 
-* Modify the setting in the source code file *web2tinyURL.py*: Notice that you should input an source file. The program will keep writing data into output file while running. The output file name is <source file name> + '\_tinyurl.csv'. And it is outputed under the same directory as the source data.
+* Modify the setting in the source code file *web2tinyURL.py*: Notice that you should input an source file. The program will keep writing data into output file while running. The output file name is \<source file name\> + '\_tinyurl.csv'. And it is outputed under the same directory as the source data.
    ```python
    # (Do not modify) the tinyurl for submitting our web string.
    tinyurlweb = r'https://tinyurl.com/'
