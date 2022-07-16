@@ -59,10 +59,10 @@ if __name__ == '__main__':
             for target in targetlist:
                 if len(target) < stringlenThreshold: continue
                 # send original web string and submit    
-                browser.find_element_by_id("url").click()
-                browser.find_element_by_id("url").clear()
-                browser.find_element_by_id("url").send_keys(target)
-                try: browser.find_element_by_id("submit").click()
+                browser.find_element(By.ID, "url").click()
+                browser.find_element(By.ID, "url").clear()
+                browser.find_element(By.ID, "url").send_keys(target)
+                try: browser.find_element(By.ID, "submit").click()
                 except TimeoutException:
                     print('time out after %d when loading page, stop loading and proceed to next operations' % pageload_timeout)
                     browser.execute_script('window.stop()')
@@ -71,7 +71,7 @@ if __name__ == '__main__':
                 # click to auto copy target string to clipboard
                 tk.clipboard_clear()
                 tk.clipboard_append('') # append empty string to create CLIPBOARD object
-                browser.find_element_by_xpath("//a[@id='copy_div']/small").click() # copy
+                browser.find_element(By.XPATH, "//a[@id='copy_div']/small").click() # copy
                 tk.update() # update values so that copied string now stays on clipboard
                 time.sleep(0.03)
                 # fetch clipboard content and update value in row
